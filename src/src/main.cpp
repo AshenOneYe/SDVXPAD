@@ -33,7 +33,6 @@ connected to the same wifi access point as your windows machine.
 Running a hotspot from your windows machine also works. Make sure
 correct firewall access is granted.
 
-Built for use with simulators like Seaurchin and SUSPlayer.
 Keyboard output follows the Yuancon specification.)";
 
 int main(int argc, char **argv)

@@ -167,19 +167,20 @@ void KeyboardSimulator::Impl::end()
         SendInputHandle(m_buffered_keys, m_input_buffer, sizeof(INPUT));
     }
 
-    // if (dd_todc && dd_movR && dd_btn && dd_mov && dd_whl && dd_key && dd_str)
-	// {
-	// 	int st = dd_btn(0); //DD Initialize
-	// 	if(st == 1){
-	// 		//ok
-    //     }
-	// }
-	// else {
-	// 	//error
-	// }
+    if (dd_todc && dd_movR && dd_btn && dd_mov && dd_whl && dd_key && dd_str)
+	{
+		int st = dd_btn(0); //DD Initialize
+		if(st == 1){
+			spdlog::info("OK");
+        }
+	}
+	else {
+		spdlog::info("ERROR");
+	}
     int ddcode = 301;
     //ddcode = dd_todc(VK_TAB);    //or by VK code
 
     dd_key(ddcode, 1);           //1==down£¬2==up
+    spdlog::info("dd_key");
     dd_key(ddcode, 2);
 }
