@@ -4,6 +4,24 @@
 
 #include <Windows.h>
 
+HINSTANCE hinst  = LoadLibraryW(L"DD.dll");
+
+typedef int(__stdcall*lpfun_DD_todc)(int);
+typedef int(__stdcall*lpfun_DD_btn)(int btn);
+typedef int(__stdcall*lpfun_DD_mov)(int x, int y);
+typedef int(__stdcall*lpfun_DD_movR)(int dx, int dy);
+typedef int(__stdcall*lpfun_DD_whl)(int whl);
+typedef int(__stdcall*lpfun_DD_key)(int code, int flag);
+typedef int(__stdcall*lpfun_DD_str)(char* str);
+
+lpfun_DD_todc dd_todc = (lpfun_DD_todc)GetProcAddress(hinst, "DD_todc");//VK code to ddcode
+lpfun_DD_btn dd_btn = (lpfun_DD_btn)GetProcAddress(hinst, "DD_btn");//Mouse move rel.
+lpfun_DD_mov dd_mov = (lpfun_DD_mov)GetProcAddress(hinst, "DD_mov");//Mouse button
+lpfun_DD_mov dd_movR = (lpfun_DD_mov)GetProcAddress(hinst, "DD_movR");//Mouse move abs.
+lpfun_DD_whl dd_whl = (lpfun_DD_whl)GetProcAddress(hinst, "DD_whl");//Mouse wheel
+lpfun_DD_key dd_key = (lpfun_DD_key)GetProcAddress(hinst, "DD_key");//Keyboard
+lpfun_DD_str dd_str = (lpfun_DD_str)GetProcAddress(hinst, "DD_str");//Input visible char
+
 // https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 
 static constexpr int N_BUTTONS = 32 + 6;
@@ -83,6 +101,17 @@ KeyboardSimulator::Impl::Impl(KeyboardSimulator::KeyboardSimulatorLayout layout)
         m_input_buffer[i].ki.dwExtraInfo = 0;
     }
 
+    if (dd_todc && dd_movR && dd_btn && dd_mov && dd_whl && dd_key && dd_str)
+	{
+		int st = dd_btn(0); //DD Initialize
+		if(st == 1){
+			spdlog::info("DD init OK");
+        }
+	}
+	else {
+		spdlog::info("DD init ERROR");
+	}
+
     // Send one blank keydown
     start();
     end();
@@ -141,23 +170,7 @@ static SendInputHandleType SendInputHandle = reinterpret_cast<SendInputHandleTyp
 
 
 
-HINSTANCE hinst  = LoadLibraryW(L"DD.dll");
 
-typedef int(__stdcall*lpfun_DD_todc)(int);
-typedef int(__stdcall*lpfun_DD_btn)(int btn);
-typedef int(__stdcall*lpfun_DD_mov)(int x, int y);
-typedef int(__stdcall*lpfun_DD_movR)(int dx, int dy);
-typedef int(__stdcall*lpfun_DD_whl)(int whl);
-typedef int(__stdcall*lpfun_DD_key)(int code, int flag);
-typedef int(__stdcall*lpfun_DD_str)(char* str);
-
-lpfun_DD_todc dd_todc = (lpfun_DD_todc)GetProcAddress(hinst, "DD_todc");//VK code to ddcode
-lpfun_DD_btn dd_btn = (lpfun_DD_btn)GetProcAddress(hinst, "DD_btn");//Mouse move rel.
-lpfun_DD_mov dd_mov = (lpfun_DD_mov)GetProcAddress(hinst, "DD_mov");//Mouse button
-lpfun_DD_mov dd_movR = (lpfun_DD_mov)GetProcAddress(hinst, "DD_movR");//Mouse move abs.
-lpfun_DD_whl dd_whl = (lpfun_DD_whl)GetProcAddress(hinst, "DD_whl");//Mouse wheel
-lpfun_DD_key dd_key = (lpfun_DD_key)GetProcAddress(hinst, "DD_key");//Keyboard
-lpfun_DD_str dd_str = (lpfun_DD_str)GetProcAddress(hinst, "DD_str");//Input visible char
 
 
 void KeyboardSimulator::Impl::end()
@@ -165,22 +178,9 @@ void KeyboardSimulator::Impl::end()
     if (m_buffered_keys)
     {
         SendInputHandle(m_buffered_keys, m_input_buffer, sizeof(INPUT));
+        
+        dd_str("q");         
+     
     }
 
-    if (dd_todc && dd_movR && dd_btn && dd_mov && dd_whl && dd_key && dd_str)
-	{
-		int st = dd_btn(0); //DD Initialize
-		if(st == 1){
-			spdlog::info("OK");
-        }
-	}
-	else {
-		spdlog::info("ERROR");
-	}
-    int ddcode = 301;
-    //ddcode = dd_todc(VK_TAB);    //or by VK code
-
-    dd_key(ddcode, 1);           //1==down£¬2==up
-    spdlog::info("dd_key");
-    dd_key(ddcode, 2);
 }
