@@ -29,12 +29,12 @@ const throttle = (func, wait) => {
 
 // Element refs
 var keys = document.getElementsByClassName("key");
-var airKeys = [];
+var volKeys = [];
 var midline = 0;
-var touchKeys = [];
+var btKeys = [];
 var allKeys = [];
-var topKeys = airKeys;
-var bottomKeys = touchKeys;
+var topKeys = volKeys;
+var bottomKeys = btKeys;
 const compileKey = (key) => {
   const prev = key.previousElementSibling;
   const next = key.nextElementSibling;
@@ -68,28 +68,16 @@ const isInside = (x, y, compiledKey) => {
 };
 const compileKeys = () => {
   keys = document.getElementsByClassName("key");
-  airKeys = [];
-  touchKeys = [];
+  volKeys = [];
+  btKeys = [];
   for (var i = 0, key; i < keys.length; i++) {
     const compiledKey = compileKey(keys[i]);
     if (!compiledKey.isAir) {
-      touchKeys.push(compiledKey);
+      btKeys.push(compiledKey);
     } else {
-      airKeys.push(compiledKey);
+      volKeys.push(compiledKey);
     }
     allKeys.push(compiledKey);
-  }
-
-  if (!config.invert) {
-    // Not inverted
-    topKeys = airKeys;
-    bottomKeys = touchKeys;
-    midline = touchKeys[0].top;
-  } else {
-    // Inverted
-    topKeys = touchKeys;
-    bottomKeys = airKeys;
-    midline = touchKeys[0].bottom;
   }
 };
 
@@ -224,29 +212,29 @@ const wsWatch = () => {
   }
 };
 
-// Canvas vars
-var canvas = document.getElementById("canvas");
-var canvasCtx = canvas.getContext("2d");
-var canvasData = canvasCtx.getImageData(0, 0, 33, 1);
-const setupLed = () => {
-  for (var i = 0; i < 33; i++) {
-    canvasData.data[i * 4 + 3] = 255;
-  }
-};
-setupLed();
-const updateLed = (data) => {
-  const buf = new Uint8Array(data);
-  for (var i = 0; i < 32; i++) {
-    canvasData.data[i * 4] = buf[(31 - i) * 3 + 1]; // r
-    canvasData.data[i * 4 + 1] = buf[(31 - i) * 3 + 2]; // g
-    canvasData.data[i * 4 + 2] = buf[(31 - i) * 3 + 0]; // b
-  }
-  // Copy from first led
-  canvasData.data[128] = buf[94];
-  canvasData.data[129] = buf[95];
-  canvasData.data[130] = buf[93];
-  canvasCtx.putImageData(canvasData, 0, 0);
-};
+// // Canvas vars
+// var canvas = document.getElementById("canvas");
+// var canvasCtx = canvas.getContext("2d");
+// var canvasData = canvasCtx.getImageData(0, 0, 33, 1);
+// const setupLed = () => {
+//   for (var i = 0; i < 33; i++) {
+//     canvasData.data[i * 4 + 3] = 255;
+//   }
+// };
+// setupLed();
+// const updateLed = (data) => {
+//   const buf = new Uint8Array(data);
+//   for (var i = 0; i < 32; i++) {
+//     canvasData.data[i * 4] = buf[(31 - i) * 3 + 1]; // r
+//     canvasData.data[i * 4 + 1] = buf[(31 - i) * 3 + 2]; // g
+//     canvasData.data[i * 4 + 2] = buf[(31 - i) * 3 + 0]; // b
+//   }
+//   // Copy from first led
+//   canvasData.data[128] = buf[94];
+//   canvasData.data[129] = buf[95];
+//   canvasData.data[130] = buf[93];
+//   canvasCtx.putImageData(canvasData, 0, 0);
+// };
 
 // Fullscreener
 const fs = document.getElementById("fullscreen");
@@ -278,10 +266,6 @@ cnt.addEventListener("touchend", updateTouches);
 const readConfig = (config) => {
   var style = "";
 
-  if (!!config.invert) {
-    style += `.container, .air-container {flex-flow: column-reverse nowrap;} `;
-  }
-
   var bgColor = config.bgColor || "rbga(0, 0, 0, 0.9)";
   if (!config.bgImage) {
     style += `#fullscreen {background: ${bgColor};} `;
@@ -312,17 +296,17 @@ const readConfig = (config) => {
 
   if (typeof config.keyHeight === "number") {
     if (config.keyHeight === 0) {
-      style += `.touch-container {display: none;} `;
+      style += `.bt-container {display: none;} `;
     } else {
-      style += `.touch-container {flex: ${config.keyHeight};} `;
+      style += `.bt-container {flex: ${config.keyHeight};} `;
     }
   }
 
   if (typeof config.lkeyHeight === "number") {
     if (config.lkeyHeight === 0) {
-      style += `.air-container {display: none;} `;
+      style += `.vol-container {display: none;} `;
     } else {
-      style += `.air-container {flex: ${config.keyHeight};} `;
+      style += `.vol-container {flex: ${config.keyHeight};} `;
     }
   }
 
@@ -333,8 +317,8 @@ const readConfig = (config) => {
 
 // Initialize
 const initialize = () => {
-  readConfig(config);
-  compileKeys();
+  readConfig(config);//设置按键style
+  compileKeys();//获取按键位置、类型等信息
   wsConnect();
   setInterval(wsWatch, 1000);
 };
