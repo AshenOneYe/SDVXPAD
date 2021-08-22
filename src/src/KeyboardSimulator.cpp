@@ -151,7 +151,12 @@ void KeyboardSimulator::Impl::start()
 void KeyboardSimulator::Impl::key_down(int i)
 {
     spdlog::debug("{} Down", m_layout[i]);
+
+    int ddcode = dd_todc(m_layout[i]);
+    dd_key(ddcode,1);
+
     m_input_buffer[m_buffered_keys].ki.wVk = m_layout[i];
+
     m_input_buffer[m_buffered_keys].ki.dwFlags = 0;
     m_buffered_keys++;
 }
@@ -159,6 +164,10 @@ void KeyboardSimulator::Impl::key_down(int i)
 void KeyboardSimulator::Impl::key_up(int i)
 {
     spdlog::debug("{} Up", m_layout[i]);
+
+    int ddcode = dd_todc(m_layout[i]);
+    dd_key(ddcode,2);
+
     m_input_buffer[m_buffered_keys].ki.wVk = m_layout[i];
     m_input_buffer[m_buffered_keys].ki.dwFlags = KEYEVENTF_KEYUP;
     m_buffered_keys++;
@@ -177,10 +186,7 @@ void KeyboardSimulator::Impl::end()
 {
     if (m_buffered_keys)
     {
-        SendInputHandle(m_buffered_keys, m_input_buffer, sizeof(INPUT));
-        
-        dd_str("q");         
-     
+        SendInputHandle(m_buffered_keys, m_input_buffer, sizeof(INPUT));     
     }
 
 }
