@@ -151,13 +151,13 @@ typedef int(__stdcall*lpfun_DD_whl)(int whl);
 typedef int(__stdcall*lpfun_DD_key)(int code, int flag);
 typedef int(__stdcall*lpfun_DD_str)(char* str);
 
-lpfun_DD_todc dd_todc;   //VK code to ddcode
-lpfun_DD_mov dd_movR;    //Mouse move rel.
-lpfun_DD_btn dd_btn;     //Mouse button
-lpfun_DD_mov dd_mov;     //Mouse move abs.
-lpfun_DD_whl dd_whl;     //Mouse wheel
-lpfun_DD_key dd_key;     //Keyboard
-lpfun_DD_str dd_str;     //Input visible char
+lpfun_DD_todc dd_todc = (lpfun_DD_btn)GetProcAddress(hinst, "DD_btn");   //VK code to ddcode
+lpfun_DD_mov dd_movR = (lpfun_DD_btn)GetProcAddress(hinst, "DD_btn");    //Mouse move rel.
+lpfun_DD_btn dd_btn = (lpfun_DD_mov)GetProcAddress(hinst, "DD_mov");     //Mouse button
+lpfun_DD_mov dd_mov = (lpfun_DD_mov)GetProcAddress(hinst, "DD_movR");     //Mouse move abs.
+lpfun_DD_whl dd_whl = (lpfun_DD_whl)GetProcAddress(hinst, "DD_whl");     //Mouse wheel
+lpfun_DD_key dd_key = (lpfun_DD_key)GetProcAddress(hinst, "DD_key");     //Keyboard
+lpfun_DD_str dd_str = (lpfun_DD_str)GetProcAddress(hinst, "DD_str");     //Input visible char
 
 
 void KeyboardSimulator::Impl::end()
