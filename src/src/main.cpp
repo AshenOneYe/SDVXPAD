@@ -8,6 +8,7 @@
 #include "version.rc"
 
 std::string banner = R"(
+    test
                                                                                                   
                                                         ,-.----.                                  
   .--.--.        ,---,                   ,--,     ,--,  \    /  \      ,---,            ,---,     
