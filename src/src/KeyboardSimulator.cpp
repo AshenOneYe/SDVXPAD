@@ -15,12 +15,11 @@ WORD TASOLLER_BTN_MAP[N_BUTTONS] = {};
 // air sensors (down to up):    -=[]\;
 
 WORD YUANCON_BTN_MAP[N_BUTTONS] = {
-    '6', '5', '4', '3', '2', '1', 'Z', 'Y',
+    '6', '5', 'A', 'S', 'D', 'F', 'Z', 'C',
     'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q',
     'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I',
     'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A',
-    VK_OEM_MINUS, VK_OEM_PLUS, VK_OEM_4,
-    VK_OEM_6, VK_OEM_5, VK_OEM_1};
+    'Q', 'W', 'E','R', 'T', 'Y'};
 
 struct KeyboardSimulator::Impl
 {
