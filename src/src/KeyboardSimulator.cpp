@@ -141,7 +141,7 @@ static SendInputHandleType SendInputHandle = reinterpret_cast<SendInputHandleTyp
 
 
 
-HINSTANCE hinst  = LoadLibraryW("DD.dll");
+HINSTANCE hinst  = LoadLibraryW(L"DD.dll");
 
 typedef int(__stdcall*lpfun_DD_todc)(int);
 typedef int(__stdcall*lpfun_DD_btn)(int btn);
