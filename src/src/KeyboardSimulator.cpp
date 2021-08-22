@@ -138,10 +138,48 @@ void KeyboardSimulator::Impl::key_up(int i)
 using SendInputHandleType = UINT(WINAPI *)(UINT, LPINPUT, int);
 static SendInputHandleType SendInputHandle = reinterpret_cast<SendInputHandleType>(GetProcAddress(GetModuleHandleW((L"user32")), "SendInput"));
 
+
+
+
+HINSTANCE hinst  = LoadLibraryW("DD.dll");
+
+typedef int(__stdcall*lpfun_DD_todc)(int);
+typedef int(__stdcall*lpfun_DD_btn)(int btn);
+typedef int(__stdcall*lpfun_DD_mov)(int x, int y);
+typedef int(__stdcall*lpfun_DD_movR)(int dx, int dy);
+typedef int(__stdcall*lpfun_DD_whl)(int whl);
+typedef int(__stdcall*lpfun_DD_key)(int code, int flag);
+typedef int(__stdcall*lpfun_DD_str)(char* str);
+
+lpfun_DD_todc dd_todc;   //VK code to ddcode
+lpfun_DD_mov dd_movR;    //Mouse move rel.
+lpfun_DD_btn dd_btn;     //Mouse button
+lpfun_DD_mov dd_mov;     //Mouse move abs.
+lpfun_DD_whl dd_whl;     //Mouse wheel
+lpfun_DD_key dd_key;     //Keyboard
+lpfun_DD_str dd_str;     //Input visible char
+
+
 void KeyboardSimulator::Impl::end()
 {
     if (m_buffered_keys)
     {
         SendInputHandle(m_buffered_keys, m_input_buffer, sizeof(INPUT));
     }
+
+    // if (dd_todc && dd_movR && dd_btn && dd_mov && dd_whl && dd_key && dd_str)
+	// {
+	// 	int st = dd_btn(0); //DD Initialize
+	// 	if(st == 1){
+	// 		//ok
+    //     }
+	// }
+	// else {
+	// 	//error
+	// }
+    int ddcode = 301;
+    //ddcode = dd_todc(VK_TAB);    //or by VK code
+
+    dd_key(ddcode, 1);           //1==down£¬2==up
+    dd_key(ddcode, 2);
 }
