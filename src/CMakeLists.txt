@@ -21,7 +21,7 @@ target_include_directories(SDVXPAD PRIVATE ${SRCROOT})
 target_link_libraries(SDVXPAD PRIVATE uws optparse spdlog)
 
 add_custom_command(
-    TARGETSDVXPAD POST_BUILD
+    TARGET SDVXPAD POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/res/ $<TARGET_FILE_DIR:SDVXPAD>/res/
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/static/ $<TARGET_FILE_DIR:SDVXPAD>/
 )
