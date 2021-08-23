@@ -3,6 +3,13 @@
     "cmake.configureOnOpen": true,
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "files.associations": {
-      "thread": "cpp"
+      "thread": "cpp",
+      "algorithm": "cpp",
+      "charconv": "cpp",
+      "iomanip": "cpp",
+      "xhash": "cpp",
+      "xlocmon": "cpp",
+      "xlocnum": "cpp"
     }
+    
   }

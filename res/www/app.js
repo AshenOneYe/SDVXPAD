@@ -1,1 +1,319 @@
-var throttle=function(e,t){var a=!0,n=null;return function o(){var s=this;a?(a=!1,setTimeout(function(){a=!0,n&&o.apply(s)},t),n?(e.apply(this,n),n=null):e.apply(this,arguments)):n=arguments}},keys=document.getElementsByClassName("key"),airKeys=[],midline=0,touchKeys=[],allKeys=[],topKeys=airKeys,bottomKeys=touchKeys,compileKey=function(e){var t=e.previousElementSibling,a=e.nextElementSibling;return{top:e.offsetTop,bottom:e.offsetTop+e.offsetHeight,left:e.offsetLeft,right:e.offsetLeft+e.offsetWidth,almostLeft:t?e.offsetLeft+e.offsetWidth/4:-99999,almostRight:a?e.offsetLeft+3*e.offsetWidth/4:99999,kflag:parseInt(e.dataset.kflag)+(parseInt(e.dataset.air)?32:0),isAir:!!parseInt(e.dataset.air),prevKeyRef:t,prevKeyKflag:t?parseInt(t.dataset.kflag)+(parseInt(t.dataset.air)?32:0):null,nextKeyRef:a,nextKeyKflag:a?parseInt(a.dataset.kflag)+(parseInt(a.dataset.air)?32:0):null,ref:e}},isInside=function(e,t,a){return a.left<=e&&e<a.right&&a.top<=t&&t<a.bottom},compileKeys=function(){keys=document.getElementsByClassName("key"),airKeys=[],touchKeys=[];for(var e=0;e<keys.length;e++){var t=compileKey(keys[e]);t.isAir?airKeys.push(t):touchKeys.push(t),allKeys.push(t)}config.invert?(topKeys=touchKeys,bottomKeys=airKeys,midline=touchKeys[0].bottom):(topKeys=airKeys,bottomKeys=touchKeys,midline=touchKeys[0].top)},getKey=function(e,t){if(t<midline){for(var a=0;a<topKeys.length;a++)if(isInside(e,t,topKeys[a]))return topKeys[a]}else for(a=0;a<bottomKeys.length;a++)if(isInside(e,t,bottomKeys[a]))return bottomKeys[a];return null},lastState=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];function updateTouches(e){try{e.preventDefault();var t=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];throttledRequestFullscreen();for(var a=0;a<e.touches.length;a++){var n=e.touches[a],o=n.clientX,s=n.clientY,r=getKey(o,s);r&&(setKey(t,r.kflag,r.isAir),r.isAir||(o<r.almostLeft&&setKey(t,r.prevKeyKflag,!1),r.almostRight<o&&setKey(t,r.nextKeyKflag,!1)))}for(a=0;a<allKeys.length;a++){var c=allKeys[a],i=c.kflag;t[i]!==lastState[i]&&(t[i]?c.ref.setAttribute("data-active",""):c.ref.removeAttribute("data-active"))}t!==lastState&&throttledSendKeys(t),lastState=t}catch(e){alert(e)}}var throttledUpdateTouches=throttle(updateTouches,10),setKey=function(e,t,a){var n=t;e[n]&&!a&&n++,e[n]=1},sendKeys=function(e){wsConnected&&ws.send("b"+e.join(""))},throttledSendKeys=throttle(sendKeys,10),ws=null,wsTimeout=0,wsConnected=!1,wsConnect=function(){(ws=new WebSocket("ws://"+location.host+"/ws")).binaryType="arraybuffer",ws.onopen=function(){ws.send("alive?")},ws.onmessage=function(e){e.data.byteLength?updateLed(e.data):"alive"==e.data&&(wsTimeout=0,wsConnected=!0)}},wsWatch=function(){if(wsTimeout++>2)return wsTimeout=0,ws.close(),wsConnected=!1,void wsConnect();wsConnected&&ws.send("alive?")},canvas=document.getElementById("canvas"),canvasCtx=canvas.getContext("2d"),canvasData=canvasCtx.getImageData(0,0,33,1),setupLed=function(){for(var e=0;e<33;e++)canvasData.data[4*e+3]=255};setupLed();var updateLed=function(e){for(var t=new Uint8Array(e),a=0;a<32;a++)canvasData.data[4*a]=t[3*(31-a)+1],canvasData.data[4*a+1]=t[3*(31-a)+2],canvasData.data[4*a+2]=t[3*(31-a)+0];canvasData.data[128]=t[94],canvasData.data[129]=t[95],canvasData.data[130]=t[93],canvasCtx.putImageData(canvasData,0,0)},fs=document.getElementById("fullscreen"),requestFullscreen=function(){!document.fullscreenElement&&screen.height<=1024&&(fs.requestFullscreen?fs.requestFullscreen():fs.mozRequestFullScreen?fs.mozRequestFullScreen():fs.webkitRequestFullScreen&&fs.webkitRequestFullScreen())},throttledRequestFullscreen=throttle(requestFullscreen,3e3),cnt=document.getElementById("main");cnt.addEventListener("touchstart",updateTouches),cnt.addEventListener("touchmove",updateTouches),cnt.addEventListener("touchend",updateTouches);var readConfig=function(e){var t="";e.invert&&(t+=".container, .air-container {flex-flow: column-reverse nowrap;} ");var a=e.bgColor||"rbga(0, 0, 0, 0.9)";e.bgImage?t+="#fullscreen {background: ".concat(a,' url("').concat(e.bgImage,'") fixed center / cover!important; background-repeat: no-repeat;} '):t+="#fullscreen {background: ".concat(a,";} "),"number"==typeof e.ledOpacity&&(0===e.ledOpacity?t+="#canvas {display: none} ":t+="#canvas {opacity: ".concat(e.ledOpacity,"} ")),"string"==typeof e.keyColor&&(t+=".key[data-active] {background-color: ".concat(e.keyColor,";} ")),"string"==typeof e.keyColor&&(t+=".key.air[data-active] {background-color: ".concat(e.lkeyColor,";} ")),"string"==typeof e.keyBorderColor&&(t+=".key {border: 1px solid ".concat(e.keyBorderColor,";} ")),e.keyColorFade&&"number"==typeof e.keyColorFade&&(t+=".key:not([data-active]) {transition: background ".concat(e.keyColorFade,"ms ease-out;} ")),"number"==typeof e.keyHeight&&(0===e.keyHeight?t+=".touch-container {display: none;} ":t+=".touch-container {flex: ".concat(e.keyHeight,";} ")),"number"==typeof e.lkeyHeight&&(0===e.lkeyHeight?t+=".air-container {display: none;} ":t+=".air-container {flex: ".concat(e.keyHeight,";} "));var n=document.createElement("style");n.innerHTML=t,document.head.appendChild(n)},initialize=function(){readConfig(config),compileKeys(),wsConnect(),setInterval(wsWatch,1e3)};initialize(),window.onresize=compileKeys;
+const throttle = (func, wait) => {
+  var ready = true;
+  var args = null;
+  return function throttled() {
+    var context = this;
+    if (ready) {
+      ready = false;
+      setTimeout(function () {
+        ready = true;
+        if (args) {
+          throttled.apply(context);
+        }
+      }, wait);
+      if (args) {
+        func.apply(this, args);
+        args = null;
+      } else {
+        func.apply(this, arguments);
+      }
+    } else {
+      args = arguments;
+    }
+  };
+};
+
+// Element refs
+var keys = document.getElementsByClassName("key");
+var airKeys = [];
+var midline = 0;
+var touchKeys = [];
+var allKeys = [];
+var topKeys = airKeys;
+var bottomKeys = touchKeys;
+const compileKey = (key) => {
+  return {
+    top: key.offsetTop,
+    bottom: key.offsetTop + key.offsetHeight,
+    left: key.offsetLeft,
+    right: key.offsetLeft + key.offsetWidth,
+    kflag: parseInt(key.dataset.kflag) + (parseInt(key.dataset.air) ? 32 : 0),
+    isAir: parseInt(key.dataset.air) ? true : false,
+    ref: key,
+  };
+};
+const isInside = (x, y, compiledKey) => {
+  return (
+    compiledKey.left <= x &&
+    x < compiledKey.right &&
+    compiledKey.top <= y &&
+    y < compiledKey.bottom
+  );
+};
+const compileKeys = () => {
+  keys = document.getElementsByClassName("key");
+  airKeys = [];
+  touchKeys = [];
+  for (var i = 0, key; i < keys.length; i++) {
+    const compiledKey = compileKey(keys[i]);
+    if (!compiledKey.isAir) {
+      touchKeys.push(compiledKey);
+    } else {
+      airKeys.push(compiledKey);
+    }
+    allKeys.push(compiledKey);
+  }
+
+  if (!config.invert) {
+    // Not inverted
+    topKeys = airKeys;
+    bottomKeys = touchKeys;
+    midline = touchKeys[0].top;
+  } else {
+    // Inverted
+    topKeys = touchKeys;
+    bottomKeys = airKeys;
+    midline = touchKeys[0].bottom;
+  }
+};
+
+const getKey = (x, y) => {
+  if (y < midline) {
+    for (var i = 0; i < topKeys.length; i++) {
+      if (isInside(x, y, topKeys[i])) return topKeys[i];
+    }
+  } else {
+    for (var i = 0; i < bottomKeys.length; i++) {
+      if (isInside(x, y, bottomKeys[i])) {
+        return bottomKeys[i];
+      }
+    }
+  }
+  return null;
+};
+
+// Button State
+// prettier-ignore
+var lastState = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0,
+];
+
+function updateTouches(e) {
+  try {
+    e.preventDefault();
+
+    // prettier-ignore
+    var keyFlags = [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+      0, 0, 0, 0, 0, 0, 0, 0,
+    ];
+
+    throttledRequestFullscreen();
+
+    for (var i = 0; i < e.touches.length; i++) {
+      const touch = e.touches[i];
+
+      const x = touch.clientX;
+      const y = touch.clientY;
+
+      const key = getKey(x, y);
+
+      if (!key) continue;
+
+      setKey(keyFlags, key.kflag, key.isAir);
+
+    }
+
+    // Render keys
+    for (var i = 0; i < allKeys.length; i++) {
+      const key = allKeys[i];
+      const kflag = key.kflag;
+      if (keyFlags[kflag] !== lastState[kflag]) {
+        if (keyFlags[kflag]) {
+          key.ref.setAttribute("data-active", "");
+        } else {
+          key.ref.removeAttribute("data-active");
+        }
+      }
+    }
+
+    if (keyFlags !== lastState) {
+      throttledSendKeys(keyFlags);
+    }
+    lastState = keyFlags;
+  } catch (err) {
+    alert(err);
+  }
+}
+const throttledUpdateTouches = throttle(updateTouches, 10);
+
+const setKey = (keyFlags, kflag, isAir) => {
+  var idx = kflag;
+  if (keyFlags[idx] && !isAir) {
+    idx++;
+  }
+  keyFlags[idx] = 1;
+};
+
+const sendKeys = (keyFlags) => {
+  if (wsConnected) {
+    ws.send("b" + keyFlags.join(""));
+  }
+};
+const throttledSendKeys = throttle(sendKeys, 10);
+
+// Websockets
+var ws = null;
+var wsTimeout = 0;
+var wsConnected = false;
+const wsConnect = () => {
+  ws = new WebSocket("ws://" + location.host + "/ws");
+  ws.binaryType = "arraybuffer";
+  ws.onopen = () => {
+    ws.send("alive?");
+  };
+  ws.onmessage = (e) => {
+    if (e.data.byteLength) {
+      updateLed(e.data);
+    } else if (e.data == "alive") {
+      wsTimeout = 0;
+      wsConnected = true;
+    }
+  };
+};
+const wsWatch = () => {
+  if (wsTimeout++ > 2) {
+    wsTimeout = 0;
+    ws.close();
+    wsConnected = false;
+    wsConnect();
+    return;
+  }
+  if (wsConnected) {
+    ws.send("alive?");
+  }
+};
+
+// Canvas vars
+var canvas = document.getElementById("canvas");
+var canvasCtx = canvas.getContext("2d");
+var canvasData = canvasCtx.getImageData(0, 0, 33, 1);
+const setupLed = () => {
+  for (var i = 0; i < 33; i++) {
+    canvasData.data[i * 4 + 3] = 255;
+  }
+};
+setupLed();
+const updateLed = (data) => {
+  const buf = new Uint8Array(data);
+  for (var i = 0; i < 32; i++) {
+    canvasData.data[i * 4] = buf[(31 - i) * 3 + 1]; // r
+    canvasData.data[i * 4 + 1] = buf[(31 - i) * 3 + 2]; // g
+    canvasData.data[i * 4 + 2] = buf[(31 - i) * 3 + 0]; // b
+  }
+  // Copy from first led
+  canvasData.data[128] = buf[94];
+  canvasData.data[129] = buf[95];
+  canvasData.data[130] = buf[93];
+  canvasCtx.putImageData(canvasData, 0, 0);
+};
+
+// Fullscreener
+const fs = document.getElementById("fullscreen");
+const requestFullscreen = () => {
+  if (!document.fullscreenElement && screen.height <= 1024) {
+    if (fs.requestFullscreen) {
+      fs.requestFullscreen();
+    } else if (fs.mozRequestFullScreen) {
+      fs.mozRequestFullScreen();
+    } else if (fs.webkitRequestFullScreen) {
+      fs.webkitRequestFullScreen();
+    }
+  }
+};
+const throttledRequestFullscreen = throttle(requestFullscreen, 3000);
+
+// Do update hooks
+const cnt = document.getElementById("main");
+
+cnt.addEventListener("touchstart", updateTouches);
+cnt.addEventListener("touchmove", updateTouches);
+cnt.addEventListener("touchend", updateTouches);
+
+// cnt.addEventListener("touchstart", throttledUpdateTouches);
+// cnt.addEventListener("touchmove", throttledUpdateTouches);
+// cnt.addEventListener("touchend", throttledUpdateTouches);
+
+// Load config
+const readConfig = (config) => {
+  var style = "";
+
+  if (!!config.invert) {
+    style += `.container, .air-container {flex-flow: column-reverse nowrap;} `;
+  }
+
+  var bgColor = config.bgColor || "rbga(0, 0, 0, 0.9)";
+  if (!config.bgImage) {
+    style += `#fullscreen {background: ${bgColor};} `;
+  } else {
+    style += `#fullscreen {background: ${bgColor} url("${config.bgImage}") fixed center / cover!important; background-repeat: no-repeat;} `;
+  }
+
+  if (typeof config.ledOpacity === "number") {
+    if (config.ledOpacity === 0) {
+      style += `#canvas {display: none} `;
+    } else {
+      style += `#canvas {opacity: ${config.ledOpacity}} `;
+    }
+  }
+
+  if (typeof config.keyColor === "string") {
+    style += `.key[data-active] {background-color: ${config.keyColor};} `;
+  }
+  if (typeof config.keyColor === "string") {
+    style += `.key.air[data-active] {background-color: ${config.lkeyColor};} `;
+  }
+  if (typeof config.keyBorderColor === "string") {
+    style += `.key {border: 1px solid ${config.keyBorderColor};} `;
+  }
+  if (!!config.keyColorFade && typeof config.keyColorFade === "number") {
+    style += `.key:not([data-active]) {transition: background ${config.keyColorFade}ms ease-out;} `;
+  }
+
+  if (typeof config.keyHeight === "number") {
+    if (config.keyHeight === 0) {
+      style += `.touch-container {display: none;} `;
+    } else {
+      style += `.touch-container {flex: ${config.keyHeight};} `;
+    }
+  }
+
+  if (typeof config.lkeyHeight === "number") {
+    if (config.lkeyHeight === 0) {
+      style += `.air-container {display: none;} `;
+    } else {
+      style += `.air-container {flex: ${config.keyHeight};} `;
+    }
+  }
+
+  var styleRef = document.createElement("style");
+  styleRef.innerHTML = style;
+  document.head.appendChild(styleRef);
+};
+
+// Initialize
+const initialize = () => {
+  readConfig(config);
+  compileKeys();
+  wsConnect();
+  setInterval(wsWatch, 1000);
+};
+initialize();
+
+// Update keys on resize
+window.onresize = compileKeys;

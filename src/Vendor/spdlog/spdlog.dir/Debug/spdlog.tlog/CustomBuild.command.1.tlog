@@ -1,0 +1,10 @@
+^C:\USERS\12824\DESKTOP\SDVXPAD\SRC\VENDOR\SPDLOG\CMAKELISTS.TXT
+setlocal
+D:\CMake\bin\cmake.exe -SC:/Users/12824/Desktop/SDVXPAD -BC:/Users/12824/Desktop/SDVXPAD --check-stamp-file C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

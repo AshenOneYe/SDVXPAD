@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\bsd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\context.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\crypto\openssl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\crypto\wolfssl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\eventing\epoll_kqueue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\eventing\gcd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\eventing\libuv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\loop.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\socket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\internal\eventing\epoll_kqueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\internal\eventing\gcd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\internal\eventing\libuv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\internal\internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\internal\loop_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\src\internal\networking\bsd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\AsyncSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\AsyncSocketData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\BloomFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\HttpContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\HttpContextData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\HttpParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\HttpResponse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\HttpResponseData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\HttpRouter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\Loop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\LoopData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\MessageParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\MoveOnlyFunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\Multipart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\PerMessageDeflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\ProxyParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\QueryParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\TopicTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\Utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\WebSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\WebSocketContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\WebSocketContextData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\WebSocketData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\WebSocketExtensions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\WebSocketHandshake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\include\uws\WebSocketProtocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\uwebsockets\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E1E28535-3901-331D-8483-3FFBAF6DB758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{80ED2402-9C6F-3877-AAE8-4FDA92A9344C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

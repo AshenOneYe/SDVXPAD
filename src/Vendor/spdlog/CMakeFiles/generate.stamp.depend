@@ -1,0 +1,13 @@
+# CMake generation dependency list for this directory.
+C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeLists.txt
+C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/cmake/ide.cmake
+C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/cmake/utils.cmake
+D:/CMake/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake
+D:/CMake/share/cmake-3.21/Modules/CheckIncludeFile.c.in
+D:/CMake/share/cmake-3.21/Modules/CheckIncludeFile.cmake
+D:/CMake/share/cmake-3.21/Modules/CheckLibraryExists.cmake
+D:/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake
+D:/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake
+D:/CMake/share/cmake-3.21/Modules/FindThreads.cmake
+D:/CMake/share/cmake-3.21/Modules/GNUInstallDirs.cmake
+D:/CMake/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake

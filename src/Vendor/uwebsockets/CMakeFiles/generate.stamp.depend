@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+C:/Users/12824/Desktop/SDVXPAD/src/Vendor/uwebsockets/CMakeLists.txt
+D:/vcpkg/installed/x64-windows/share/unofficial-libuv/unofficial-libuv-config.cmake
+D:/vcpkg/installed/x64-windows/share/unofficial-libuv/unofficial-libuv-targets-debug.cmake
+D:/vcpkg/installed/x64-windows/share/unofficial-libuv/unofficial-libuv-targets-release.cmake
+D:/vcpkg/installed/x64-windows/share/unofficial-libuv/unofficial-libuv-targets.cmake

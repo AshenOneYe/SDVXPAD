@@ -31,9 +31,7 @@ std::string epilog = R"(
 Open the URL displayed on a touch-enabled device (big iPads recommended)
 connected to the same wifi access point as your windows machine.
 Running a hotspot from your windows machine also works. Make sure
-correct firewall access is granted.
-
-Keyboard output follows the Yuancon specification.)";
+correct firewall access is granted.)";
 
 int main(int argc, char **argv)
 {

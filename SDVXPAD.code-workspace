@@ -6,7 +6,7 @@
   ],
   "settings": {
     "cmake.configureArgs": [
-      "-DCMAKE_TOOLCHAIN_FILE=E:\\Environment\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake",
+      "-DCMAKE_TOOLCHAIN_FILE=D:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake",
       "-DVCPKG_TARGET_TRIPLET=x64-windows"
     ],
     "editor.defaultFormatter": "ms-vscode.cpptools",

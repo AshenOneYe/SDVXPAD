@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\spdlog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\stdout_sinks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\color_sinks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\file_sinks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\async.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\cfg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\fmt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\async.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\async_logger-inl.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\async_logger.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\common-inl.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\common.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\formatter.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fwd.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\logger-inl.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\logger.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\pattern_formatter-inl.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\pattern_formatter.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\spdlog-inl.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\spdlog.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\stopwatch.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\tweakme.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\version.h">
+      <Filter>Header Files\spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\backtracer-inl.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\backtracer.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\circular_q.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\console_globals.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\file_helper-inl.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\file_helper.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\fmt_helper.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\log_msg-inl.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\log_msg.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\log_msg_buffer-inl.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\log_msg_buffer.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\mpmc_blocking_q.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\null_mutex.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\os-inl.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\os.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\periodic_worker-inl.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\periodic_worker.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\registry-inl.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\registry.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\synchronous_factory.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\tcp_client-windows.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\tcp_client.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\thread_pool-inl.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\thread_pool.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\windows_include.h">
+      <Filter>Header Files\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\android_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\ansicolor_sink-inl.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\ansicolor_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\base_sink-inl.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\base_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\basic_file_sink-inl.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\basic_file_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\daily_file_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\dist_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\dup_filter_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\hourly_file_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\msvc_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\null_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\ostream_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\ringbuffer_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\rotating_file_sink-inl.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\rotating_file_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\sink-inl.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\stdout_color_sinks-inl.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\stdout_color_sinks.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\stdout_sinks-inl.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\stdout_sinks.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\syslog_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\systemd_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\tcp_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\win_eventlog_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\wincolor_sink-inl.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\wincolor_sink.h">
+      <Filter>Header Files\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bin_to_hex.h">
+      <Filter>Header Files\spdlog\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\chrono.h">
+      <Filter>Header Files\spdlog\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\fmt.h">
+      <Filter>Header Files\spdlog\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\ostr.h">
+      <Filter>Header Files\spdlog\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\chrono.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\color.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\compile.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\core.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\format-inl.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\format.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\locale.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\os.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\ostream.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\posix.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\printf.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\ranges.h">
+      <Filter>Header Files\spdlog\fmt\bundled</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E1E28535-3901-331D-8483-3FFBAF6DB758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\spdlog">
+      <UniqueIdentifier>{FD55C461-4D80-32D3-8081-83740042E73F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\spdlog\details">
+      <UniqueIdentifier>{35CAF9CF-7046-3869-83D5-04F11619CABB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\spdlog\fmt">
+      <UniqueIdentifier>{6EB7AE2B-9C88-3591-977B-0FBE889C0EDA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\spdlog\fmt\bundled">
+      <UniqueIdentifier>{7108E707-D9EA-3068-A46B-2A21F7DD56C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\spdlog\sinks">
+      <UniqueIdentifier>{7326CBAA-06E6-36CE-93BD-A9DECDAE6601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{80ED2402-9C6F-3877-AAE8-4FDA92A9344C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

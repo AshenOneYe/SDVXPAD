@@ -8,21 +8,15 @@ HINSTANCE hinst  = LoadLibraryW(L"DD.dll");
 
 typedef int(__stdcall*lpfun_DD_todc)(int);
 typedef int(__stdcall*lpfun_DD_btn)(int btn);
-typedef int(__stdcall*lpfun_DD_mov)(int x, int y);
-typedef int(__stdcall*lpfun_DD_movR)(int dx, int dy);
-typedef int(__stdcall*lpfun_DD_whl)(int whl);
 typedef int(__stdcall*lpfun_DD_key)(int code, int flag);
-typedef int(__stdcall*lpfun_DD_str)(char* str);
+
 
 lpfun_DD_todc dd_todc = (lpfun_DD_todc)GetProcAddress(hinst, "DD_todc");//VK code to ddcode
 lpfun_DD_btn dd_btn = (lpfun_DD_btn)GetProcAddress(hinst, "DD_btn");//Mouse move rel.
-lpfun_DD_mov dd_mov = (lpfun_DD_mov)GetProcAddress(hinst, "DD_mov");//Mouse button
-lpfun_DD_mov dd_movR = (lpfun_DD_mov)GetProcAddress(hinst, "DD_movR");//Mouse move abs.
-lpfun_DD_whl dd_whl = (lpfun_DD_whl)GetProcAddress(hinst, "DD_whl");//Mouse wheel
 lpfun_DD_key dd_key = (lpfun_DD_key)GetProcAddress(hinst, "DD_key");//Keyboard
-lpfun_DD_str dd_str = (lpfun_DD_str)GetProcAddress(hinst, "DD_str");//Input visible char
 
-// https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+
+
 
 static constexpr int N_BUTTONS = 32 + 6;
 
@@ -33,8 +27,8 @@ WORD TASOLLER_BTN_MAP[N_BUTTONS] = {};
 // air sensors (down to up):    -=[]\;
 
 WORD YUANCON_BTN_MAP[N_BUTTONS] = {
-    '6', '5', 'A', 'S', 'D', 'F', 'Z', 'C',
-    'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q',
+    '6', 'A', '4', 'S', '2', 'D', '0', 'F',
+    'X', 'Z', 'V', 'C', 'T', 'S', 'R', 'Q',
     'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I',
     'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A',
     'Y', 'Q', 'W','E', 'R', 'T'};
@@ -42,17 +36,13 @@ WORD YUANCON_BTN_MAP[N_BUTTONS] = {
 struct KeyboardSimulator::Impl
 {
     WORD *m_layout;
-    INPUT m_input_buffer[N_BUTTONS];
 
     uint64_t m_last_keys;
-    int m_buffered_keys;
 
     Impl(KeyboardSimulator::KeyboardSimulatorLayout layout);
 
-    void start();
     void key_down(int i);
     void key_up(int i);
-    void end();
 
     void send(uint64_t keys);
 };
@@ -74,8 +64,7 @@ void KeyboardSimulator::delay(int millis)
 
 KeyboardSimulator::Impl::Impl(KeyboardSimulator::KeyboardSimulatorLayout layout)
     : m_layout(nullptr),
-      m_last_keys(0),
-      m_buffered_keys(0)
+      m_last_keys(0)
 {
     switch (layout)
     {
@@ -90,18 +79,8 @@ KeyboardSimulator::Impl::Impl(KeyboardSimulator::KeyboardSimulatorLayout layout)
         break;
     }
 
-    // Zero out buffer
-    for (int i = 0; i < N_BUTTONS; i++)
-    {
-        m_input_buffer[i].type = INPUT_KEYBOARD;
-        m_input_buffer[i].ki.wVk = 0;
-        m_input_buffer[i].ki.wScan = 0;
-        m_input_buffer[i].ki.dwFlags = 0;
-        m_input_buffer[i].ki.time = 0;
-        m_input_buffer[i].ki.dwExtraInfo = 0;
-    }
 
-    if (dd_todc && dd_movR && dd_btn && dd_mov && dd_whl && dd_key && dd_str)
+    if (dd_todc && dd_btn && dd_key)
 	{
 		int st = dd_btn(0); //DD Initialize
 		if(st == 1){
@@ -112,9 +91,6 @@ KeyboardSimulator::Impl::Impl(KeyboardSimulator::KeyboardSimulatorLayout layout)
 		spdlog::info("DD init ERROR");
 	}
 
-    // Send one blank keydown
-    start();
-    end();
 };
 
 void KeyboardSimulator::Impl::send(uint64_t keys)
@@ -125,7 +101,6 @@ void KeyboardSimulator::Impl::send(uint64_t keys)
 
     m_last_keys = keys;
 
-    start();
     for (int i = 0; i < N_BUTTONS; i++)
     {
         if (keys_to_down & 1)
@@ -140,13 +115,9 @@ void KeyboardSimulator::Impl::send(uint64_t keys)
         keys_to_down >>= 1;
         keys_to_up >>= 1;
     }
-    end();
+
 }
 
-void KeyboardSimulator::Impl::start()
-{
-    m_buffered_keys = 0;
-}
 
 void KeyboardSimulator::Impl::key_down(int i)
 {
@@ -155,10 +126,7 @@ void KeyboardSimulator::Impl::key_down(int i)
     int ddcode = dd_todc(m_layout[i]);
     dd_key(ddcode,1);
 
-    m_input_buffer[m_buffered_keys].ki.wVk = m_layout[i];
 
-    m_input_buffer[m_buffered_keys].ki.dwFlags = 0;
-    m_buffered_keys++;
 }
 
 void KeyboardSimulator::Impl::key_up(int i)
@@ -168,19 +136,5 @@ void KeyboardSimulator::Impl::key_up(int i)
     int ddcode = dd_todc(m_layout[i]);
     dd_key(ddcode,2);
 
-    m_input_buffer[m_buffered_keys].ki.wVk = m_layout[i];
-    m_input_buffer[m_buffered_keys].ki.dwFlags = KEYEVENTF_KEYUP;
-    m_buffered_keys++;
 }
 
-using SendInputHandleType = UINT(WINAPI *)(UINT, LPINPUT, int);
-static SendInputHandleType SendInputHandle = reinterpret_cast<SendInputHandleType>(GetProcAddress(GetModuleHandleW((L"user32")), "SendInput"));
-
-void KeyboardSimulator::Impl::end()
-{
-    if (m_buffered_keys)
-    {
-        SendInputHandle(m_buffered_keys, m_input_buffer, sizeof(INPUT));     
-    }
-
-}

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E6AAB36D-E916-31C1-920B-B3B2B577561F}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>spdlog</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12824\Desktop\SDVXPAD\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">spdlog.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">spdlogd</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\12824\Desktop\SDVXPAD\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">spdlog.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">spdlog</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\12824\Desktop\SDVXPAD\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">spdlog.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">spdlog</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\12824\Desktop\SDVXPAD\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">spdlog.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">spdlog</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SPDLOG_COMPILED_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SPDLOG_COMPILED_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\CMake\bin\cmake.exe -SC:/Users/12824/Desktop/SDVXPAD -BC:/Users/12824/Desktop/SDVXPAD --check-stamp-file C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\cmake\ide.cmake;C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\cmake\utils.cmake;D:\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;D:\CMake\share\cmake-3.21\Modules\CheckIncludeFile.c.in;D:\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;D:\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;D:\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;D:\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;D:\CMake\share\cmake-3.21\Modules\FindThreads.cmake;D:\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;D:\CMake\share\cmake-3.21\Modules\Internal\CheckSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\CMake\bin\cmake.exe -SC:/Users/12824/Desktop/SDVXPAD -BC:/Users/12824/Desktop/SDVXPAD --check-stamp-file C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\cmake\ide.cmake;C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\cmake\utils.cmake;D:\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;D:\CMake\share\cmake-3.21\Modules\CheckIncludeFile.c.in;D:\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;D:\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;D:\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;D:\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;D:\CMake\share\cmake-3.21\Modules\FindThreads.cmake;D:\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;D:\CMake\share\cmake-3.21\Modules\Internal\CheckSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\CMake\bin\cmake.exe -SC:/Users/12824/Desktop/SDVXPAD -BC:/Users/12824/Desktop/SDVXPAD --check-stamp-file C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\cmake\ide.cmake;C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\cmake\utils.cmake;D:\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;D:\CMake\share\cmake-3.21\Modules\CheckIncludeFile.c.in;D:\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;D:\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;D:\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;D:\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;D:\CMake\share\cmake-3.21\Modules\FindThreads.cmake;D:\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;D:\CMake\share\cmake-3.21\Modules\Internal\CheckSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\CMake\bin\cmake.exe -SC:/Users/12824/Desktop/SDVXPAD -BC:/Users/12824/Desktop/SDVXPAD --check-stamp-file C:/Users/12824/Desktop/SDVXPAD/src/Vendor/spdlog/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\cmake\ide.cmake;C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\cmake\utils.cmake;D:\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;D:\CMake\share\cmake-3.21\Modules\CheckIncludeFile.c.in;D:\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;D:\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;D:\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;D:\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;D:\CMake\share\cmake-3.21\Modules\FindThreads.cmake;D:\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;D:\CMake\share\cmake-3.21\Modules\Internal\CheckSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\spdlog.cpp" />
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\stdout_sinks.cpp" />
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\color_sinks.cpp" />
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\file_sinks.cpp" />
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\async.cpp" />
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\cfg.cpp" />
+    <ClCompile Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\src\fmt.cpp" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\async.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\async_logger-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\async_logger.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\common-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\common.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\formatter.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fwd.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\logger-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\logger.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\pattern_formatter-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\pattern_formatter.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\spdlog-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\spdlog.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\stopwatch.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\tweakme.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\version.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\backtracer-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\backtracer.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\circular_q.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\console_globals.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\file_helper-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\file_helper.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\fmt_helper.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\log_msg-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\log_msg.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\log_msg_buffer-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\log_msg_buffer.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\mpmc_blocking_q.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\null_mutex.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\os-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\os.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\periodic_worker-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\periodic_worker.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\registry-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\registry.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\synchronous_factory.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\tcp_client-windows.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\tcp_client.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\thread_pool-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\thread_pool.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\details\windows_include.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\android_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\ansicolor_sink-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\ansicolor_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\base_sink-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\base_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\basic_file_sink-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\basic_file_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\daily_file_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\dist_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\dup_filter_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\hourly_file_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\msvc_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\null_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\ostream_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\ringbuffer_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\rotating_file_sink-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\rotating_file_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\sink-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\stdout_color_sinks-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\stdout_color_sinks.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\stdout_sinks-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\stdout_sinks.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\syslog_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\systemd_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\tcp_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\win_eventlog_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\wincolor_sink-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\sinks\wincolor_sink.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bin_to_hex.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\chrono.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\fmt.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\ostr.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\chrono.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\color.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\compile.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\core.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\format-inl.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\format.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\locale.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\os.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\ostream.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\posix.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\printf.h" />
+    <ClInclude Include="C:\Users\12824\Desktop\SDVXPAD\src\Vendor\spdlog\include\spdlog\fmt\bundled\ranges.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\12824\Desktop\SDVXPAD\ZERO_CHECK.vcxproj">
+      <Project>{AB237848-85FE-33B8-8A95-8F04401B2DE2}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
