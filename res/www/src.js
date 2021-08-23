@@ -131,15 +131,15 @@ function updateTouches(e) {
 
       setKey(keyFlags, key.kflag, key.isAir);
 
-      if (key.isAir) continue;
+      // if (key.isAir) continue;
 
-      if (x < key.almostLeft) {
-        setKey(keyFlags, key.prevKeyKflag, false);
-      }
+      // if (x < key.almostLeft) {
+      //   setKey(keyFlags, key.prevKeyKflag, false);
+      // }
 
-      if (key.almostRight < x) {
-        setKey(keyFlags, key.nextKeyKflag, false);
-      }
+      // if (key.almostRight < x) {
+      //   setKey(keyFlags, key.nextKeyKflag, false);
+      // }
     }
 
     // Render keys

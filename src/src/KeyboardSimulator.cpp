@@ -176,12 +176,6 @@ void KeyboardSimulator::Impl::key_up(int i)
 using SendInputHandleType = UINT(WINAPI *)(UINT, LPINPUT, int);
 static SendInputHandleType SendInputHandle = reinterpret_cast<SendInputHandleType>(GetProcAddress(GetModuleHandleW((L"user32")), "SendInput"));
 
-
-
-
-
-
-
 void KeyboardSimulator::Impl::end()
 {
     if (m_buffered_keys)
